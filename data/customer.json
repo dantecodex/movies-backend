@@ -1,0 +1,92 @@
+[
+  {
+    "name": "John",
+    "age": 30,
+    "isMarried": true,
+    "subscription": {
+      "type": "yearly",
+      "renewalDate": {
+        "day": 10,
+        "month": "May",
+        "year": 2025
+      }
+    },
+    "address": ["New York", "USA"],
+    "purchase": [
+      {"name": "Book", "mode": "online", "price": 20},
+      {"name": "Clothes", "price": 50}
+    ]
+  },
+  {
+    "name": "Alice",
+    "age": 25,
+    "isMarried": false,
+    "subscription": {
+      "type": "monthly",
+      "renewalDate": {
+        "day": 15,
+        "month": "June",
+        "year": 2024
+      }
+    },
+    "address": ["London", "UK"],
+    "purchase": [
+      {"name": "Electronics", "mode": "in-store", "price": 300},
+      {"name": "Groceries", "mode": "online", "price": 100}
+    ]
+  },
+  {
+    "name": "Michael",
+    "age": 40,
+    "isMarried": true,
+    "subscription": {
+      "type": "yearly",
+      "renewalDate": {
+        "day": 20,
+        "month": "August",
+        "year": 2024
+      }
+    },
+    "address": ["Sydney", "Australia"],
+    "purchase": [
+      {"name": "Furniture", "price": 800},
+      {"name": "Accessories", "mode": "online", "price": 50}
+    ]
+  },
+  {
+    "name": "Emily",
+    "age": 28,
+    "isMarried": false,
+    "subscription": {
+      "type": "monthly",
+      "renewalDate": {
+        "day": 5,
+        "month": "September",
+        "year": 2024
+      }
+    },
+    "address": ["Paris", "France"],
+    "purchase": [
+      {"name": "Games", "mode": "in-store", "price": 60},
+      {"name": "Movies", "price": 25}
+    ]
+  },
+  {
+    "name": "David",
+    "age": 35,
+    "isMarried": true,
+    "subscription": {
+      "type": "yearly",
+      "renewalDate": {
+        "day": 25,
+        "month": "July",
+        "year": 2025
+      }
+    },
+    "address": ["Tokyo", "Japan"],
+    "purchase": [
+      {"name": "Clothes", "mode": "online", "price": 75},
+      {"name": "Electronics", "price": 200}
+    ]
+  }
+]
