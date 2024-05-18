@@ -4,19 +4,18 @@ class ApiFeatures {
         this.queryStr = queryStr;
 
     }
-    
+
     filter() { // This method is excluded in getMovie fucntion becuase of queryObj interface with prior functions
         let queryString = JSON.stringify(this.queryStr);
         queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
         const queryObj = JSON.parse(queryString);
 
         this.query = this.query.find(queryObj);
-        
+
         return this;
     }
 
     sort() {
-        console.log(this.queryStr);
         if (this.queryStr.sort) {
             const sortBy = this.queryStr.sort.split(',').join(' ');
             this.query = this.query.sort(sortBy);

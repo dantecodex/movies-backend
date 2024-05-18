@@ -10,7 +10,6 @@ const movieSchema = new mongoose.Schema({
         maxlength: [100, "Movie name must not be more than 100 chaaracters"],
         minlength: [4, "Movie name must not be less than 4 chaaracters"],
         trim: true
-    
     },
     description: {
         type: String,
@@ -79,12 +78,12 @@ const movieSchema = new mongoose.Schema({
 });
 
 
-// EXECUTE BEFORE THE DOCUMENT IS SAVED
-// .save() or .create()
 movieSchema.virtual('durationInHours').get(function () {
     return this.duration / 60;
 })
 
+// EXECUTE BEFORE THE DOCUMENT IS SAVED
+// .save() or .create()
 movieSchema.pre('save', function (next) {
     this.createdBy = 'Anshul'
     next();

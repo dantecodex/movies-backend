@@ -1,6 +1,14 @@
 import mongoose from "mongoose";
+import 'dotenv/config';
+
+process.on('uncaughtException', (err) => {
+    console.log(err.name, err.message);
+    console.log('Uncaught exception occured, Shutting Down...!');
+    process.exit(1);
+})
+
+
 import app from "./app.js";
-import 'dotenv/config'
 
 // console.log(app.get('env'));
 // console.log(process.env);
@@ -10,12 +18,19 @@ mongoose.connect(process.env.CONN_STR, {
 }).then((conn) => {
     // console.log(conn);
     console.log('DB Connection Succesfull');
-}).catch((error) => {
-    console.log('Some error has occured');
+}).catch((err) => {
+    console.log(`Failed to connect MongoDB ${err}`);
 })
 
-
-
-app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
     console.log('Server has started...');
 })
+
+process.on('unhandledRejection', (err) => {
+    console.log(err.name, err.message);
+    console.log('Unhandle Rejection occured, Shutting Down...!');
+    server.close(() => {
+        process.exit(1);
+    });
+})
+

@@ -14,6 +14,7 @@ const getHighestRated = (req, res, next) => {
 
 //Route Hnadler Function
 const getMovie = asyncErrorHandler(async (req, res, next) => {
+
     const features = new ApiFeatures(Movie.find(), req.query).sort().limitFields().paginate();
     let movie = await features.query
 
@@ -24,8 +25,6 @@ const getMovie = asyncErrorHandler(async (req, res, next) => {
             movie
         }
     })
-    
-
 })
 
 const getMovieByID = asyncErrorHandler(async (req, res, next) => {
@@ -36,7 +35,6 @@ const getMovieByID = asyncErrorHandler(async (req, res, next) => {
         // const err = new CustomError("Movie with ID is not found",404)
         // return next(err)
     }
-
     res.status(200).json({
         status: "Success",
         data: {
